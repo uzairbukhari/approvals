@@ -1,10 +1,25 @@
-<div class="login">
-    <h1>Login</h1>
-    <form method="post">
-        <input type="text" ng-model="info.username" name="u" placeholder="Username" required="required" />
-        <input type="password" ng-model="info.password" name="p" placeholder="Password" required="required" />
-        <input type="text" ng-model="info.domain" name="u" placeholder="Domain" required="required" />
-        <input type="text" ng-model="info.company" name="u" placeholder="Company" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large" ng-click="authUser()">Let me in.</button>
-    </form>
+<div class="logo-wrapper">
+    <div class="containber">
+        <div class="approval-logo">
+            <img src="images/approvals-logo.png">
+        </div>
+    </div>
+
+<div class="login-wrapper">
+	<div class="container">
+        <div class="login">
+            <!--h1>Login</h1-->
+            <form method="post">
+                <input class="login-fields" type="text" ng-model="info.username" name="u" placeholder="Username" required="required" />
+                <input  class="login-fields" type="password" ng-model="info.password" name="p" placeholder="Password" required="required" />
+                <input  class="login-fields" type="text" ng-model="info.domain" name="u" placeholder="Domain" required="required" />
+                <input  class="login-fields" type="text" ng-model="info.company" name="u" placeholder="Company" required="required" />
+                <button type="submit" class="button-general btn-block btn-large" ng-click="authUser()">Let me in.</button>
+            </form>
+        </div>
+        <div class="setting-para-wrapper text-center">
+        	<p>Unable to connect? Please configure the<br> Dynamics AX <a>server settings</a> here before start using the Application.</p>
+        </div>
+	</div>
+    </div>
 </div>
