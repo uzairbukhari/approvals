@@ -12,11 +12,15 @@ angular.module('myApp.details', ['ngRoute'])
 
 // Home controller
     .controller('DetailCtrl', ['$scope', '$rootScope', 'HttpServices', '$location', function($scope, $rootScope, HttpServices, $location) {
-        console.log($location.search().ref);
         var queryString = $location.search().ref,
             cor_id = queryString[0],
-            rec_id = queryString[1];
+            rec_obj = queryString[1];
 
+        if(_.isString(rec_obj))
+            $location.path('/home').search('','');
+
+        $scope.record = rec_obj;
+        console.log(rec_obj);
         var jsonObj = {
             module: 'history',
             postUrl: cor_id
@@ -24,6 +28,7 @@ angular.module('myApp.details', ['ngRoute'])
         HttpServices.get(jsonObj).then(
             function (response) {
                 if(response) {
+                    $scope.history = response.HList;
                     console.log(response);
                 }
             }
@@ -31,11 +36,12 @@ angular.module('myApp.details', ['ngRoute'])
 
         jsonObj = {
             module: 'lines',
-            postUrl: rec_id
+            postUrl: rec_obj.detail2
         };
         HttpServices.get(jsonObj).then(
             function (response) {
                 if(response) {
+                    $scope.lines = response.lines;
                     console.log(response);
                 }
             }

@@ -1,16 +1,15 @@
 <div>
+    <h1>{{record.detail2}} - {{record.detail4}}</h1>
     <div style="display: inline-block" >
         <h1>History</h1>
         <div>
             <div class="wrapper">
                 <div class="card radius shadowDepth1">
                     <div class="card__content card__padding">
-                        <article class="card__article">
-                            <h2>Hello</h2>
-
-                            <p>Can you : <span>hear me</span></p>
-                            <p>All these : <span>years you</span></p>
-                            <p style="font-weight: 300;">like to meet</p>
+                        <article class="card__article" ng-repeat="item in history">
+                            <p>Requested by : <span style="font-weight: 300;">{{item.user}}</span></p>
+                            <p>Requested date : <span style="font-weight: 300;">{{item.time}}</span></p>
+                            <hr>
                         </article>
                     </div>
                 </div>
@@ -24,11 +23,9 @@
                 <div class="card radius shadowDepth1">
                     <div class="card__content card__padding">
                         <article class="card__article">
-                            <h2>Hello</h2>
-
-                            <p>Can you : <span>hear me</span></p>
-                            <p>All these : <span>years you</span></p>
-                            <p style="font-weight: 300;">like to meet</p>
+                            <p>{{record.label4}} : <span style="font-weight: 300;">{{record.detail4}}</span></p>
+                            <p>{{record.label0}} : <span style="font-weight: 300;">{{record.detail0}}</span></p>
+                            <p>{{record.label1}} : <span style="font-weight: 300;">{{record.detail1}}</span></p>
                         </article>
                     </div>
                 </div>
@@ -41,12 +38,14 @@
             <div class="wrapper">
                 <div class="card radius shadowDepth1">
                     <div class="card__content card__padding">
-                        <article class="card__article">
-                            <h2>Hello</h2>
-
-                            <p>Can you : <span>hear me</span></p>
-                            <p>All these : <span>years you</span></p>
-                            <p style="font-weight: 300;">like to meet</p>
+                        <article class="card__article" ng-repeat="item in lines">
+                            <p>Item ID : <span style="font-weight: 300;">{{item.ItemId}}</span></p>
+                            <p>Item Name : <span style="font-weight: 300;">{{item.ItemName}}</span></p>
+                            <p>Line No : <span style="font-weight: 300;">{{item.LineNo}}</span></p>
+                            <p>PO Price : <span style="font-weight: 300;">{{item.POPrice}}</span></p>
+                            <p>PO Quantity : <span style="font-weight: 300;">{{item.POQty}}</span></p>
+                            <p>Vendor : <span style="font-weight: 300;">{{item.Vendor}}</span></p>
+                            <hr>
                         </article>
                     </div>
                 </div>
