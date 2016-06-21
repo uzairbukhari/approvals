@@ -57,8 +57,9 @@ angular.module('myApp.home', ['ngRoute'])
         };
 
         $scope.showDetail = function (item, state) {
-            var arr = state == "pending" ? $scope.pendingRecords: $scope.approvedRecords;
-            var u_Id = _.find(arr, function (r) { return r.summary1 == item.detail2 })
+            var arr = state == "pending" ? $scope.pendingRecords: $scope.approvedRecords,
+                rec_id = state == "pending" ? item.detail2: item.detail1;
+            var u_Id = _.find(arr, function (r) { return r.summary1 == rec_id });
             $location.path('/details').search('ref', [u_Id.cor_id, item]);
         };
     }]);
