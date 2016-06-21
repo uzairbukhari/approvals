@@ -1,7 +1,7 @@
 /**
  * Created by uahmed on 5/18/2015.
  */
-myApp.service('HttpServices', ['$http', '$q', function (http, q) {
+myApp.service('HttpServices', ['$http', '$q', '$location', function (http, q, $location) {
     // Return public API.
     // --- API PATHS
     var baseUrl = 'http://demo8.folio3.com:8085/Service.svc/json/',
@@ -165,8 +165,10 @@ myApp.service('HttpServices', ['$http', '$q', function (http, q) {
     // I transform the error response, unwrapping the application dta from
     // the API response payload.
     function handleError(response) {
+        console.log(response);
         if(response) {
             if(response.status == 401) {
+                $location.path('/login');
                 window.alert(response.data.ErrorMessage[0]);
             }
         }
