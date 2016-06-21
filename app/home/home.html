@@ -1,0 +1,58 @@
+<div>
+    <h1>Purchase Orders</h1>
+    <div id="tabs">
+        <ul>
+            <li ng-repeat="tab in tabs"
+                ng-class="{active:isActiveTab(tab.url)}"
+                ng-click="onClickTab(tab)">{{tab.title}}</li>
+        </ul>
+        <div id="mainView">
+            <div ng-include="currentTab"></div>
+        </div>
+    </div>
+    <script type="text/ng-template" id="pending.tpl.html">
+        <div id="viewOne">
+            <h1>Pending Orders</h1>
+            <div>
+                <div class="wrapper" ng-click="showDetail(item, 'pending')" style="display: inline-block" ng-repeat="item in pendingList">
+                    <div class="card radius shadowDepth1">
+                        <div class="card__content card__padding">
+                            <div class="card__meta">
+                                <time>{{item.detail6}}</time>
+                            </div>
+
+                            <article class="card__article">
+                                <h2>{{item.detail4}}</h2>
+
+                                <p>{{item.label0}} : <span>{{item.detail0}}</span></p>
+                                <p>{{item.label1}} : <span>{{item.detail1}}</span></p>
+                                <p style="font-weight: 300;">{{item.detail5}}</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="approved.tpl.html">
+        <div id="viewTwo">
+            <h1>Approved Orders</h1>
+            <div>
+                <div class="wrapper" ng-click="showDetail(item, '')" style="display: inline-block" ng-repeat="item in approvedList">
+                    <div class="card radius shadowDepth1">
+                        <div class="card__content card__padding">
+                            <article class="card__article">
+                                <h2>{{item.detail4}}</h2>
+
+                                <p>{{item.label0}} : <span>{{item.detail0}}</span></p>
+                                <p>{{item.label1}} : <span>{{item.detail1}}</span></p>
+                                <p style="font-weight: 300;">{{item.detail5}}</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+</div>
