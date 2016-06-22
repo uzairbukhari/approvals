@@ -24,6 +24,12 @@ myApp.service('HttpServices', ['$http', '$q', '$location', function (http, q, $l
             },
             lines: {
                 get: 'POLines/'
+            },
+            approve: {
+                get: 'Approve'
+            },
+            reject: {
+                get: 'Reject'
             }
         };
 
@@ -166,11 +172,20 @@ myApp.service('HttpServices', ['$http', '$q', '$location', function (http, q, $l
     // the API response payload.
     function handleError(response) {
         console.log(response);
-        if(response) {
-            if(response.status == 401) {
-                $location.path('/login');
-                window.alert(response.data.ErrorMessage[0]);
+        try {
+            if (response) {
+                if (response.status == 401) {
+                    $location.path('/login');
+                    window.alert(response.data.ErrorMessage[0]);
+                }
+                else if (response.status == 500) {
+                    window.alert(response.data.ErrorMessage[0]);
+                }
             }
+        }
+        catch (e)
+        {
+            window.alert("Something went wrong. Try again later.");
         }
         //console.log(response);
         /*var errorText = response.statusText;
