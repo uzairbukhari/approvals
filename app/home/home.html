@@ -1,31 +1,8 @@
-<<<<<<< HEAD
 <div class="container">
-    <h1 class="heading-blue text-center">Purchase Orders</h1>
-    <script type="text/ng-template" id="pending.tpl.html">
-        <div id="viewOne">
-            <h1 class="blue-color">Pending Orders</h1>
-            <div class="row">
-                <div class="wrapper" ng-click="showDetail(item, 'pending')" style="display: inline-block" ng-repeat="item in pendingList">
-                    <div class="card radius shadowDepth1">
-                        <div class="card__content card__padding">
-                            <div class="card__meta">
-                                <time>{{item.detail6}}</time>
-                            </div>
-
-                            <article class="card__article">
-                                <h4>{{item.detail4}}</h4>
-
-                                <p>{{item.label0}} : <span>{{item.detail0}}</span></p>
-                                <p>{{item.label1}} : <span>{{item.detail1}}</span></p>
-                                <p style="font-weight: 300; color: #1b3b6a;">{{item.detail5}}</p>
-                            </article>
-                        </div>
-=======
-<div>
-    <h1>Purchase Orders</h1>
+    <h1 class="text-center heading-blue">Purchase Orders</h1>
     <div id="tabs">
-        <ul>
-            <li ng-repeat="tab in tabs"
+        <ul class="">
+            <li class="order-tabs" ng-repeat="tab in tabs"
                 ng-class="{active:isActiveTab(tab.title)}"
                 ng-click="onClickTab(tab)">{{tab.title}}</li>
         </ul>
@@ -34,78 +11,50 @@
         </div>
     </div>
     <div ng-show="currentTab == 'Pending'">
-        <h1>Pending Orders</h1>
-        <div>
-            <div class="wrapper" ng-click="showDetail(item, 'pending')" style="display: inline-block" ng-repeat="item in pendingList">
-                <div class="card radius shadowDepth1">
-                    <div class="card__content card__padding">
-                        <div class="card__meta">
-                            <time>{{item.detail6}}</time>
+        <h1 class="blue-color">Pending Orders</h1>
+        <div class="row">
+        
+            <div class="wrapper" ng-click="showDetail(item, 'pending')" style="" ng-repeat="item in pendingList">
+                <div class="span4">
+                	<div class="card radius shadowDepth1">
+                    	<div class="card__content card__padding">
+                            <div class="card__meta">
+                                <time>{{item.detail6}}</time>
+                            </div>
+    
+                            <article class="card__article">
+                                <h4>{{item.detail4}}</h4>
+    
+                                <p>{{item.label0}} : <span>{{item.detail0}}</span></p>
+                                <p>{{item.label1}} : <span>{{item.detail1}}</span></p>
+                                <p style="font-weight: 300; color:#183b6b;">{{item.detail5}}</p>
+                            </article>
                         </div>
-
-                        <article class="card__article">
-                            <h2>{{item.detail4}}</h2>
-
-                            <p>{{item.label0}} : <span>{{item.detail0}}</span></p>
-                            <p>{{item.label1}} : <span>{{item.detail1}}</span></p>
-                            <p style="font-weight: 300;">{{item.detail5}}</p>
-                        </article>
->>>>>>> c5af219d8faa94c75b72db7020ca4e98a34e966b
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-<<<<<<< HEAD
-    <script type="text/ng-template" id="approved.tpl.html">
-        <div id="viewTwo">
-            <h1 class="blue-color">Approved Orders</h1>
-            <div>
-                <div class="wrapper" ng-click="showDetail(item, '')" style="display: inline-block" ng-repeat="item in approvedList">
+    <div ng-show="currentTab == 'Approved'">
+        <h1 class="blue-color">Approved Orders</h1>
+        <div class="row">
+            
+                <div class="wrapper" ng-click="showDetail(item, '')" style="" ng-repeat="item in approvedList">
+                    <div class="span4">
                     <div class="card radius shadowDepth1">
                         <div class="card__content card__padding">
                             <article class="card__article">
                                 <h4>{{item.detail4}}</h4>
-
+    
                                 <p>{{item.label0}} : <span>{{item.detail0}}</span></p>
                                 <p>{{item.label1}} : <span>{{item.detail1}}</span></p>
-                                <p style="font-weight: 300; color: #1b3b6a;">{{item.detail5}}</p>
+                                <p style="font-weight: 300; color:#183b6b;">{{item.detail5}}</p>
                             </article>
                         </div>
-=======
-    <div ng-show="currentTab == 'Approved'">
-        <h1>Approved Orders</h1>
-        <div>
-            <div class="wrapper" ng-click="showDetail(item, '')" style="display: inline-block" ng-repeat="item in approvedList">
-                <div class="card radius shadowDepth1">
-                    <div class="card__content card__padding">
-                        <article class="card__article">
-                            <h2>{{item.detail4}}</h2>
-
-                            <p>{{item.label0}} : <span>{{item.detail0}}</span></p>
-                            <p>{{item.label1}} : <span>{{item.detail1}}</span></p>
-                            <p style="font-weight: 300;">{{item.detail5}}</p>
-                        </article>
->>>>>>> c5af219d8faa94c75b72db7020ca4e98a34e966b
                     </div>
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-    </script>
-</div>
-<div class="container">
-	    <div id="tabs">
-        
-            <div style="max-width=50%;" ng-repeat="tab in tabs"
-                ng-class="{active:isActiveTab(tab.url)}"
-                ng-click="onClickTab(tab)">{{tab.title}}</div>
-        
-        <div id="mainView">
-            <div ng-include="currentTab"></div>
-        </div>
-=======
->>>>>>> c5af219d8faa94c75b72db7020ca4e98a34e966b
     </div>
 </div>

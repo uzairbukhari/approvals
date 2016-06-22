@@ -4,13 +4,21 @@ ul {
     margin: 0;
 }
 li {
-    float: left;
+    /*float: left;
     border: 1px solid #000;
     border-bottom-width: 0;
     margin: 3px 3px 0px 3px;
     padding: 5px 5px 0px 5px;
     background-color: #CCC;
-    color: #696969;
+    color: #696969;*/
+	float: left;
+    /* border: 1px solid #000; */
+    /* border-bottom-width: 0; */
+    margin: 3px 3px 3px 3px;
+    padding: 10px 20px 10px 20px;
+    background-color: #CCC;
+    color: #183b6b;
+    box-shadow: 1px 1px #183b6b;
 }
 #mainView {
     /*border: 1px solid black;*/
@@ -18,8 +26,8 @@ li {
     /*padding: 0 1em;*/
 }
 .active {
-    background-color: #FFF;
-    color: #000;
+    background-color: #44b54a;
+    color: #fff;
 }
 
 @import 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
@@ -65,13 +73,17 @@ h2 {
 }
 
 .wrapper {
-    max-width: 100%;
+    /*max-width: 100%;
     margin: 50px auto;
     padding-left: 1em;
-    padding-right: 1em;
+    padding-right: 1em;*/
 }
 .blue-color {
 	color: #183b6b;	
+}
+.order-tabs {
+	/*width: 50%;
+	max-width:100%;	*/
 }
 
 /**
