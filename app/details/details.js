@@ -71,7 +71,7 @@ angular.module('myApp.details', ['ngRoute'])
                     jsonObj = {
                         module: 'approve',
                         param: {
-                            id: '{' + rec_obj + '}',
+                            id: '{' + rec_obj.workitem_id + '}',
                             comment: '{' + result + '}'
                         }
                     };
@@ -79,7 +79,7 @@ angular.module('myApp.details', ['ngRoute'])
                     jsonObj = {
                         module: 'reject',
                         param: {
-                            id: '{' + cor_id + '}',
+                            id: '{' + rec_obj.workitem_id + '}',
                             comment: '{' + result + '}'
                         }
                     };
