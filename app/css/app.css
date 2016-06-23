@@ -276,3 +276,37 @@ h2 {
     font-family: sans-serif;
 	font-size: 46px;
 }
+.approved, .reject {
+	display: inline-block;	
+}
+.approved a {
+	background-color: #44b54a;
+    color: #fff;
+	padding: 10px 50px 10px 15px;
+    border-radius: 4px;
+	position: relative;
+    font-size: 18px;
+    font-weight: 400;
+}
+.approved a:before {
+	content:url('../images/approved-icon.png');
+	position: absolute;
+    right: 10px;	
+	top: 5px;
+}
+.reject a {
+	background-color: #ea4747;
+    color: #fff;
+	padding: 10px 50px 10px 15px;
+    border-radius: 4px;
+	position: relative;
+    font-size: 18px;
+    font-weight: 400;
+}
+.reject a:before {
+	content:url('../images/rejected-icon.png');
+	position: absolute;
+    right: 10px;	
+	top: 8px;
+}
+
