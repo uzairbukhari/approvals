@@ -20,6 +20,9 @@ li {
     color: #183b6b;
     box-shadow: 1px 1px #183b6b;
 }
+html, body {
+    overflow-y: visible;
+}
 #mainView {
     /*border: 1px solid black;*/
     clear: both;
